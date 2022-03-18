@@ -10,6 +10,8 @@ const categories = [
   ]
 const mockCurrentCategory = jest.fn();
 const mockSetCurrentCategory = jest.fn();
+const mockContactSelected = jest.fn();
+const mockSetContactSelected = jest.fn();
 
 // describe function is not necessary for the test to run
 // it is used to organize tests into sections that are labeled with the element being tested
@@ -20,6 +22,8 @@ describe('Nav component', () => {
             categories={categories} 
             setCurrentCategory={mockSetCurrentCategory}
             currentCategory={mockCurrentCategory}
+            contactSelected={mockContactSelected}
+            setContactSelected={mockSetContactSelected}
             />);
     })
     // snapshot
@@ -28,6 +32,8 @@ describe('Nav component', () => {
             categories={categories} 
             setCurrentCategory={mockSetCurrentCategory}
             currentCategory={mockCurrentCategory}
+            contactSelected={mockContactSelected}
+            setContactSelected={mockSetContactSelected}
             />);
         expect(asFragment()).toMatchSnapshot();
     })
@@ -40,6 +46,8 @@ describe('camera emoji is visible', () => {
             categories={categories} 
             setCurrentCategory={mockSetCurrentCategory}
             currentCategory={mockCurrentCategory}
+            contactSelected={mockContactSelected}
+            setContactSelected={mockSetContactSelected}
             />);
         // Assert
         // test the emoji's accessibility features by querying the element by its aria-label camera
@@ -54,6 +62,8 @@ describe('links are visible', () => {
             categories={categories} 
             setCurrentCategory={mockSetCurrentCategory}
             currentCategory={mockCurrentCategory}
+            contactSelected={mockContactSelected}
+            setContactSelected={mockSetContactSelected}
             />);
         // Assert
         expect(getByTestId('link')).toHaveTextContent('Oh Snap!');
